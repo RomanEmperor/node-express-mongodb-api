@@ -1,0 +1,28 @@
+{
+    "name": "node-express-mongodb-api",
+    "version": "1.0.0",
+    "description": "This is an app for creating simple restful crud api in node, express and mongodb",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon server"
+    },
+    "keywords": [
+        "node",
+        "express",
+        "mongodb",
+        "api",
+        "json",
+        "crud",
+        "restful"
+    ],
+    "author": "Eydean Interns",
+    "license": "UNLICENSED",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mongoose": "^5.10.13",
+        "nodemon": "^2.0.6"
+    }
+}
