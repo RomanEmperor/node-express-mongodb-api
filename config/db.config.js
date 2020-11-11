@@ -1,3 +1,3 @@
 module.exports = {
-    url: 'mongodb://localhost:27017/node-express-mongodb-api'
+    url: 'mongodb://localhost/node-express-mongodb-api'
 }

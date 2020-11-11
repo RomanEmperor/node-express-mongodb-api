@@ -6,15 +6,13 @@ const cors = require('cors');
 const app = express();
 
 // Setup server port
-const port = process.env.PORT || 4000;
+const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000
 
 // enable cors origin access
-app.use(cors({
-    //origin: '[website URL which calls the api]'
-}));
+app.use(cors());
 
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -26,7 +24,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
-mongoose.connect(dbConfig.url, {
+mongoose.connect(process.env.MONGODB_URI || dbConfig.url, {
     useNewUrlParser: true
 }).then(() => {
     console.log("Successfully connected to the database");    
